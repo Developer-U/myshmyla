@@ -287,6 +287,23 @@
     
   });
 
+  new Swiper('.slides_vip', {
+    speed: 600,
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 6,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },   
+    
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+  });
+
   new Swiper('.slides-3', {
     speed: 600,
     loop: true,

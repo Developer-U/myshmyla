@@ -4,56 +4,62 @@ Estore Template Search
 */
 get_header();
 ?>
+    <section class="hero-section search-wrapper">
+        <div class="container services__cont"> 
+            <?php         
+            $args = array(
+                'post_type' => 'works',
+                'post__not_in' => array(327),
+            );
+            if ( have_posts() ) : ?>               
 
-    <div class="background-plashka bg-right-top-grey cat"></div> 
-    <div class="background-plashka bg-right-six-grey"></div>
+                <h1 class="single-menu__title search-wrapper__title">
+                    <?php echo $wp_query->found_posts; ?>
+                    <!-- US -->
+                    <?php
+                        if (get_locale() == 'en_US') {
+                    ?> 
 
-    <section class="hero-section services">
-        <div class="container services__cont">
-            <?php
-                if ( function_exists('yoast_breadcrumb') ) {
-                yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
-                }
-            ?>  
-            
-            <div class="types__bg services__bg"></div>
+                        <?php _e( 'results for', 'locale' ); ?>: "<?php the_search_query(); ?>"
 
-                <?php if ( have_posts() ) : ?>               
+                    <!-- RU -->
+                    <?php    
+                        } elseif (get_locale() == 'ru_RU') {
+                    ?>
 
-                    <h1 class="avtopark__heading services__heading">
-                        <?php echo $wp_query->found_posts; ?> 
                         <?php _e( 'результатов найдено для', 'locale' ); ?>: "<?php the_search_query(); ?>"
-                    </h1> 
-                    
-                    <article class="services__article services-article row">
-                    
-                        <?php
-                        /* Start the Loop */
-                        while ( have_posts() ) :
-                            the_post();
 
-                            /**
-                             * Run the loop for the search to output the results.
-                             * If you want to overload this in a child theme then include a file
-                             * called content-search.php and that will be used instead.
-                             */
-                            get_template_part( 'template-parts/content', 'search' );
+                    <?php
+                        }
+                    ?>
+                </h1> 
+                                  
+                <div class="search-list">
+                
+                    <?php
+                    /* Start the Loop */
+                    while ( have_posts($args) ) :
+                        the_post($args);
 
-                        endwhile;
+                        /**
+                         * Run the loop for the search to output the results.
+                         * If you want to overload this in a child theme then include a file
+                         * called content-search.php and that will be used instead.
+                         */
+                        get_template_part( 'template-parts/content', 'search' );
 
-                        the_posts_navigation(); ?>
-                    </article>
+                    endwhile;
 
-                <?php else :
+                    wp_reset_postdata(); 
+                     ?>
+                </div> 
 
-                    get_template_part( 'template-parts/content', 'none' );
-                ?>
-                            
+            <?php else :
+                get_template_part( 'template-parts/content', 'none' );                                           
 
-                <?php endif;
-                ?>
+            endif;          
 
-            </div>
+            ?>            
         </div>
     </section>
 

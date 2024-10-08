@@ -16,37 +16,30 @@
     if (get_locale() == 'en_US') {
     ?>
         <?php if(is_front_page() ): ?>
-            <?php if( $hero_params_en['image'] ): ?>
-                <section id="hero" class="d-flex align-items-center" style="background-image: url('<?php echo $hero_params_en['image']['url']; ?>');">
-            <?php else: ?>
-                <section id="hero" class="d-flex align-items-center" style="background-color: #212121;">
-            <?php endif; ?>
+            <section id="hero" class="d-flex align-items-center" >
+                <video loop muted autoplay playsinline class="hero__mp" poster="<?php echo $hero_params['image']['url']; ?>">
+                    <!-- <source src="/wp-content/themes/vertex/img/right-m.webm" type="video/webm"> -->
+                    <source src="<?php echo $hero_params['video']; ?>" type="video/mp4">
+                </video>  
                 <div class="container position-relative text-center text-lg-start" >
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h1 class="mb-4"><?php echo $hero_params_en['title']; ?></h1>
-                        <h2><?php echo $hero_params_en['sub-title']; ?></h2>
-                    
-                        <div class="btns">
-                            <?php if( $hero_params_en['menu-link'] ): ?>
-                                <a href="<?php echo $hero_params_en['menu-link']; ?>" class="btn-menu animated fadeInUp scrollto md:mb-0 mb-3"><?php echo $hero_params_en['menu-title']; ?></a>
-                            <?php endif; ?>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h1 class="mb-4"><?php echo $hero_params_en['title']; ?></h1>
+                            <h2><?php echo $hero_params_en['sub-title']; ?></h2>
+                        
+                            <div class="btns">
+                                <?php if( $hero_params_en['menu-link'] ): ?>
+                                    <a href="<?php echo $hero_params_en['menu-link']; ?>" class="btn-menu animated fadeInUp scrollto md:mb-0 mb-3"><?php echo $hero_params_en['menu-title']; ?></a>
+                                <?php endif; ?>
 
-                            <?php if( get_field('book-link_en', 'options') ): ?>
-                                <a href="<?php the_field('book-link_en', 'options'); ?>" class="btn-book animated fadeInUp scrollto"><?php the_field('book-title_en', 'options'); ?></a>
-                            <?php endif; ?>
-                        </div>
-                    
+                                <?php if( get_field('book-link_en', 'options') ): ?>
+                                    <a href="<?php the_field('book-link_en', 'options'); ?>" class="btn-book animated fadeInUp scrollto"><?php the_field('book-title_en', 'options'); ?></a>
+                                <?php endif; ?>
+                            </div>
+                        
 
+                        </div>                        
                     </div>
-
-                    <?php
-                    if( $hero_params_en['youtube-link'] ): ?>
-                        <div class="col-lg-4 d-flex justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                            <a href="<?php echo $hero_params_en['youtube-link']; ?>" class="glightbox play-btn"></a>
-                        </div>
-                    <?php endif; ?>
-                </div>
                 </div>
             </section>
         <?php elseif( is_category() ): ?>
@@ -114,11 +107,13 @@
     <?php    
     } elseif (get_locale() == 'ru_RU') { ?>
         <?php if(is_front_page() ): ?>
-            <?php if( $hero_params['image'] ): ?>
-                <section id="hero" class="d-flex align-items-center" style="background-image: url('<?php echo $hero_params['image']['url']; ?>');">
-            <?php else: ?>
-                <section id="hero" class="d-flex align-items-center" style="background-color: #212121;">
-            <?php endif; ?>
+            
+            <section id="hero" class="d-flex align-items-center" >
+                <video loop muted autoplay playsinline class="hero__mp" poster="<?php echo $hero_params['image']['url']; ?>">
+                    <!-- <source src="/wp-content/themes/vertex/img/right-m.webm" type="video/webm"> -->
+                    <source src="<?php echo $hero_params['video']; ?>" type="video/mp4">
+                </video>  
+
                 <div class="container position-relative text-center text-lg-start" >
                 <div class="row">
                     <div class="col-lg-8">
@@ -134,16 +129,7 @@
                                 <a href="<?php the_field('book-link', 'options'); ?>" class="btn-book animated fadeInUp scrollto"><?php the_field('book-title', 'options'); ?></a>
                             <?php endif; ?>
                         </div>
-                    
-
-                    </div>
-
-                    <?php
-                    if( $hero_params['youtube-link'] ): ?>
-                        <div class="col-lg-4 d-flex justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                            <a href="<?php echo $hero_params['youtube-link']; ?>" class="glightbox play-btn"></a>
-                        </div>
-                    <?php endif; ?>
+                    </div>                    
                 </div>
                 </div>
             </section>

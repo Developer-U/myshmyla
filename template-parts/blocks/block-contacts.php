@@ -56,7 +56,7 @@ $lang = get_locale();
                                 </div>
                             <?php endif; ?>
 
-                            <button class="btn-book mt-5 animated fadeInUp scrollto"><?php the_field('book-title_en', 'options'); ?></button>
+                            <a class="reserve-btn btn-book mt-5 animated fadeInUp" style="display: block; width: fit-content" href="#popmake-694"><?php the_field('book-title_en', 'options'); ?></a>
                         </div>
                     </div>
 
@@ -155,7 +155,7 @@ $lang = get_locale();
                                 </div>
                             <?php endif; ?>
 
-                            <button class="btn-book mt-5 animated fadeInUp scrollto"><?php the_field('book-title', 'options'); ?></button>
+                            <a class="reserve-btn btn-book mt-5 animated fadeInUp" href="#popmake-694" style="display: block; width: fit-content"><?php the_field('book-title', 'options'); ?></a>
                         </div>
                     </div>
 

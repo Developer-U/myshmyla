@@ -8,6 +8,8 @@ get_header();
 
     <?php get_template_part( 'template-parts/blocks/block-about' ); ?>
 
+    <?php get_template_part( 'template-parts/blocks/block-about-vip' ); ?>
+
     <?php get_template_part( 'template-parts/blocks/block-restraunt-tabs' ); ?>
 
     <?php get_template_part( 'template-parts/blocks/block-why-us' ); ?>
