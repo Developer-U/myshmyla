@@ -1,87 +1,50 @@
 <?php
 /*
-** Block gallery
-*/
+ ** Block gallery
+ */
+$gallery_title = get_field('gallery_title_' . get_locale());
+$gallery_description = get_field('gallery_description_' . get_locale());
 ?>
 
 <!-- ======= Gallery Section ======= -->
 <section id="gallery" class="gallery">
-    <div class="container" data-aos="fade-up">
-    <div class="section-title">
-        <h2>Gallery</h2>
-        <p>Some photos from Our Restaurant</p>
-    </div>
-    </div>
-
     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="mb-lg-5 mb-4"><?php echo $gallery_title; ?></h2>
 
-    <div class="row g-0">
-
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
+        <div class="mb-lg-5 mb-4">
+            <?php echo $gallery_description; ?>
         </div>
 
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
+        <?php if (have_rows('add_new_gallery_image')): ?>
+            <div class="tab-pane" id="menu-dinner">
+                <!-- ======= Gallery Section ======= -->
+                <div id="gallery" class="gallery">
+                    <div class="container-fluid row" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row g-0">
+                            <?php if (have_rows('add_new_gallery_image')): ?>
+                                <?php while (have_rows('add_new_gallery_image')):
+                                    the_row();
+                                    $gallery_image = get_sub_field('gallery_image');
+                                    ?>
 
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="gallery-item">
+                                            <a href="<?php echo $gallery_image['url']; ?>" class="gallery-lightbox"
+                                                data-gall="gallery-item">
+                                                <img src="<?php echo $gallery_image['url']; ?>"
+                                                    alt="<?php echo $gallery_image['alt']; ?>" class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
 
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-        <div class="gallery-item">
-            <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
-            </a>
-        </div>
-        </div>
-
-    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Gallery Section -->
+            </div><!-- End Dinner Menu Content -->
+        <?php endif; ?>
 
     </div>
 </section>

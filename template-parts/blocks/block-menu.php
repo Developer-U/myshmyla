@@ -94,7 +94,7 @@
               ?>
 
                 <li class="menu-docs__item">
-                    <a href="<?php echo $menu_document_link_en; ?>" class="menu-docs__link" target="_blank">
+                    <a href="<?php echo $menu_document_link_en['url']; ?>" class="menu-docs__link" target="_blank">
                       <svg fill="#f2eb1f" width="200px" height="200px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="list-1"  enable-background="new 0 0 32 32" xml:space="preserve">
                         <rect x="9" y="14" width="1" height="1"/>
                         <rect x="13" y="18" width="10" height="1"/>
@@ -186,7 +186,7 @@
               ?>
 
                 <li class="menu-docs__item">
-                    <a href="<?php echo $menu_document_link; ?>" class="menu-docs__link" target="_blank">
+                    <a href="<?php echo $menu_document_link['url']; ?>" class="menu-docs__link" target="_blank">
                       <svg fill="#f2eb1f" width="200px" height="200px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="list-1"  enable-background="new 0 0 32 32" xml:space="preserve">
                         <rect x="9" y="14" width="1" height="1"/>
                         <rect x="13" y="18" width="10" height="1"/>

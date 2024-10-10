@@ -16,7 +16,7 @@ $book_block_button_en = get_field('book-title_en', 'options');
 ?>
 
     <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table decor">
+    <section id="book-a-table" class="book-a-table decor dark">
         <div class="container col-xl-6 col-lg-8 col-12" data-aos="fade-up"> 
             <?php if( $book_block_title_en ): ?>           
                 <h2 class="xl:display-3 lg:mb-5 mb-3 text-center"><?php echo $book_block_title_en; ?></h2> 
@@ -47,7 +47,7 @@ $book_block_button_en = get_field('book-title_en', 'options');
 ?>
 
     <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table decor">
+    <section id="book-a-table" class="book-a-table decor dark">
         <div class="container col-xl-6 col-lg-8 col-12" data-aos="fade-up"> 
             <?php if( $book_block_title ): ?>           
                 <h2 class="xl:display-3 lg:mb-5 mb-3 text-center"><?php echo $book_block_title; ?></h2> 
